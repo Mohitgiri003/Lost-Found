@@ -1,0 +1,142 @@
+/* 🌐 Global Styles */
+:root {
+  --bg-light: linear-gradient(135deg, #dceefb, #fcd6ec);
+  --bg-dark: linear-gradient(135deg, #1e1e2f, #34344e);
+  --text-light: #1a1a1a;
+  --text-dark: #f1f1f1;
+  --card-light: rgba(255, 255, 255, 0.4);
+  --card-dark: rgba(255, 255, 255, 0.08);
+  --border-light: rgba(255, 255, 255, 0.2);
+  --border-dark: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-light);
+  color: var(--text-light);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
+
+.dark {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* 🌙 Dark Mode Toggle */
+#darkModeToggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  font-size: 20px;
+  background: rgba(255,255,255,0.4);
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  z-index: 99;
+  backdrop-filter: blur(10px);
+}
+
+/* 🧑‍🎓 Header */
+header {
+  text-align: center;
+  margin: 2rem 0 1rem;
+}
+header h1 {
+  font-size: 2rem;
+}
+header p {
+  font-weight: 400;
+  color: #666;
+}
+
+/* 🔍 Filter/Search Bar */
+.filter-bar {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.filter-bar select,
+.filter-bar input {
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-size: 1rem;
+  width: 200px;
+  max-width: 90%;
+}
+
+/* 📦 Cards */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+.item-card {
+  background: var(--card-light);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 1rem;
+  backdrop-filter: blur(12px);
+  transition: transform 0.2s ease;
+}
+.dark .item-card {
+  background: var(--card-dark);
+  border: 1px solid var(--border-dark);
+}
+.item-card:hover {
+  transform: translateY(-5px);
+}
+.item-card h3 {
+  margin: 0 0 0.5rem;
+}
+.item-card .badge {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: white;
+}
+.badge.lost {
+  background-color: #ff4d4d;
+}
+.badge.found {
+  background-color: #28a745;
+}
+
+/* ➕ Floating Button */
+#addItemBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: #4e8cff;
+  color: white;
+  font-size: 2rem;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  z-index: 100;
+}
+#addItemBtn:hover {
+  transform: scale(1.05);
+}
+
+/* 📝 Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 90;
+  left: 0;
+  top: 0;
+  width: 100%;

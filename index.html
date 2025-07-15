@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lost & Found | Student Portal</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- 🌙 Dark Mode Toggle -->
+  <button id="darkModeToggle" title="Toggle Dark Mode">🌓</button>
+
+  <!-- 🌟 Heading -->
+  <header>
+    <h1>Lost and Found</h1>
+    <p>Report or recover lost items in your campus</p>
+  </header>
+
+  <!-- 📋 Report Button -->
+  <div class="report-bar">
+    <button id="addItemBtn">📋 Report Lost/Found Item</button>
+  </div>
+
+  <!-- 🔍 Filter + Search Bar -->
+  <div class="filter-bar">
+    <select id="filterType">
+      <option value="all">All</option>
+      <option value="lost">Lost</option>
+      <option value="found">Found</option>
+    </select>
+    <input type="text" id="search" placeholder="Search item name..." />
+  </div>
+
+  <!-- 📦 Item Display Area -->
+  <section id="itemsList" class="cards-container">
+    <!-- Cards will be injected here -->
+  </section>
+
+  <!-- 📝 Modal Form -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Report Lost or Found Item</h2>
+      <form id="itemForm">
+        <select id="type" required>
+          <option value="lost">I lost something</option>
+          <option value="found">I found something</option>
+        </select>
+        <input type="text" id="name" placeholder="Item name" required />
+        <textarea id="description" placeholder="Item description" required></textarea>
+        <input type="text" id="contact" placeholder="Your contact info" required />
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ✅ Correct Script Loading Order -->
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
